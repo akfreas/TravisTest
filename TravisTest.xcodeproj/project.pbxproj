@@ -216,6 +216,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = SashimiBlade;
 				TargetAttributes = {
+					192D38C4184BDB0D004958CD = {
+						DevelopmentTeam = KGJCC745S9;
+					};
 					192D38F0184BDB0D004958CD = {
 						TestTargetID = 192D38C4184BDB0D004958CD;
 					};
@@ -408,11 +411,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TravisTest/TravisTest-Prefix.pch";
 				INFOPLIST_FILE = "TravisTest/TravisTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,11 +427,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TravisTest/TravisTest-Prefix.pch";
 				INFOPLIST_FILE = "TravisTest/TravisTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
