@@ -1,4 +1,4 @@
 language: objective-c
 
-xcode_project: TravisTest.xcodeproj
-xcode_scheme: TravisTest
+script:
+ - xctool -scheme TravisTest -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
