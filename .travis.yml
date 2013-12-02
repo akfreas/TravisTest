@@ -7,7 +7,7 @@ env:
   - secure: F9Ml6FuoAvqyUQCw6A3C7evzsTvSM60kVSfyZSJz8sVHP8Q+mnVlsVKOTpYUhS8PejeG3hrhyH/ENup2Ml9PSLnE/VCMOaCpIUrI2S949AshNfTvtZxRuQDASg8PAFHMBnDKtISYqJ4mGUhniOjUuCpTua8EXcmRmsm30X5daNk=
 install:
 - export S3_CERT_BUCKET="sashimiblog-assets"
-- export S3_CERT_KEY="test-certs.zip"
+- export S3_CERT_KEY="certs.zip"
 - git submodule update --init --recursive
 - sudo easy_install boto
 - python ./scripts/install_certs.py
