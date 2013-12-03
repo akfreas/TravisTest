@@ -1,14 +1,13 @@
 language: objective-c
 env:
   xcode_sdk: iphoneos7.0
+  - export S3_CERT_BUCKET="sashimiblog-assets"
+  - export S3_CERT_KEY="certs.zip"
   global:
   - secure: GrJ2hbuwBctBRD5NA54uEBVAIrkm9VKqNE7CYjVSud/cC6GLsqRAeEUll3/cwdv6NPiIyh0lKe1GZeOAY/wp8OTKFSfS8k0z68o17i7abYv67O5uZT3r4R/sLOQc0uHNh/6Aq18MDxAwnMoBctMTyDIpFmWtuw79ZUio05Tunl4=
   - secure: DrzncZzuU5erch3vXxd3zznNRudZ8cM/G4+BEni+vsYa1wBXz1qG2A+87/lypxW33zIouhCfiGuUQA6idSodj8IyLFQdPNJmN+WuafD+0tHxVme5nMLC4lWC1Hw+pXUEzOMNHP6w0ZZxByi+HNsXM82/8sjRvI3fCkeNR0cgFUc=
   - secure: F9Ml6FuoAvqyUQCw6A3C7evzsTvSM60kVSfyZSJz8sVHP8Q+mnVlsVKOTpYUhS8PejeG3hrhyH/ENup2Ml9PSLnE/VCMOaCpIUrI2S949AshNfTvtZxRuQDASg8PAFHMBnDKtISYqJ4mGUhniOjUuCpTua8EXcmRmsm30X5daNk=
 install:
-- export S3_CERT_BUCKET="sashimiblog-assets"
-- export S3_CERT_KEY="certs.zip"
-- git submodule update --init --recursive
-- sudo easy_install boto
+- sudo easy_install boto                #this is a dependency of the below script, used to download your protected assets from S3.
 - python ./scripts/install_certs.py
 script: xctool -project TravisTest.xcodeproj -scheme TravisTest
