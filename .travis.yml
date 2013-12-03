@@ -7,8 +7,10 @@ env:
   - secure: GrJ2hbuwBctBRD5NA54uEBVAIrkm9VKqNE7CYjVSud/cC6GLsqRAeEUll3/cwdv6NPiIyh0lKe1GZeOAY/wp8OTKFSfS8k0z68o17i7abYv67O5uZT3r4R/sLOQc0uHNh/6Aq18MDxAwnMoBctMTyDIpFmWtuw79ZUio05Tunl4=
   - secure: DrzncZzuU5erch3vXxd3zznNRudZ8cM/G4+BEni+vsYa1wBXz1qG2A+87/lypxW33zIouhCfiGuUQA6idSodj8IyLFQdPNJmN+WuafD+0tHxVme5nMLC4lWC1Hw+pXUEzOMNHP6w0ZZxByi+HNsXM82/8sjRvI3fCkeNR0cgFUc=
   - secure: F9Ml6FuoAvqyUQCw6A3C7evzsTvSM60kVSfyZSJz8sVHP8Q+mnVlsVKOTpYUhS8PejeG3hrhyH/ENup2Ml9PSLnE/VCMOaCpIUrI2S949AshNfTvtZxRuQDASg8PAFHMBnDKtISYqJ4mGUhniOjUuCpTua8EXcmRmsm30X5daNk=
-  - secure: MNO2G6fzYOK3jKpd3HzdNZ0vtXaLCLMs2lSCkCRuBHj50QJfqTMybL52Y/8MJg8zNr2VeDaksgVNmkCyMdf/VSqPuqjuYzG/86B2w/P5eOO2dEf0Yx238HkhTeqwAPrcA2GWnMtNK/gNolKXspKj0/NCML27lfptM4UiC2hFOEE=
+  - secure: RqBOg+YRufU3aGDFJ/OUZU61N5iUAoy9JVsvLJF+sWBGxksp6iYD8put42rElpZRdMmRcJTmFmyDNXv1YsSsSuNOom91B/fSov/09kWHev7a1IqfCxdn9p4smO0CeSwhM5kQqNqXYLUtUCXzYOEG40WAR+mWGegDMWZN8VnIMgI=
+  - secure: FzcKt5VIoo5/SooLAt2wtd8Qf+cqf0fKRwD5j3ObBYPOy+Y84HIaJuxm1shyfBSEUuSAZR0k/6orqCYUJejRyURgaRrXYZI0OxOF2DVr0ln26RY8rb5E74jyYntAnDf7yppAeqUeGuh5dVBSmtScUAdlC9dcqZUDraMzoWsYqr8=
 install:
-- sudo easy_install boto                #this is a dependency of the below script, used to download your protected assets from S3.
+- sudo easy_install boto gitpython requests biplist
 - python ./scripts/install_certs.py
 script: xctool -project TravisTest.xcodeproj -scheme TravisTest build archive
+after_success: python ./scripts/TestFlightDistribute.py
