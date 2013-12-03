@@ -11,4 +11,4 @@ env:
 install:
 - sudo easy_install boto                #this is a dependency of the below script, used to download your protected assets from S3.
 - python ./scripts/install_certs.py
-script: xctool -project TravisTest.xcodeproj -scheme TravisTest
+script: xctool -project TravisTest.xcodeproj -scheme TravisTest build archive
