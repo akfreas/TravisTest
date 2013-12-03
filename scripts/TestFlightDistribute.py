@@ -34,7 +34,6 @@ def upload_app_to_testflight(archive_path, testflight_api_token, testflight_team
             'notify'             : notify,
             'distribution_lists' : distro_list
             }
-    print meta_params
     upload_response = requests.post(testflight_api_url, meta_params, files=file_upload_params)
 
     app_package.close()
