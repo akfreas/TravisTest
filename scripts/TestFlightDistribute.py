@@ -11,7 +11,6 @@ testflight_api_url = "http://testflightapp.com/api/builds.json"
 
 def upload_app_to_testflight(archive_path, testflight_api_token, testflight_team_token, testflight_distro_lists=[], notify=True):
 
-    print archive_path
     plist_path = "%s/Info.plist" % archive_path
     archive_plist = biplist.readPlist(plist_path)
 
@@ -22,7 +21,6 @@ def upload_app_to_testflight(archive_path, testflight_api_token, testflight_team
 
     app_package = package_app('iphoneos', full_app_path, app_name)
     app_dsym_zip = zip_dsym(dsym_path)
-    print app_dsym_zip
     notes = compile_note_from_git_head()
     distro_list = ",".join(testflight_distro_lists)
 
